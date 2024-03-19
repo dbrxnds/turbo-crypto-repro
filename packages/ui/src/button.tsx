@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
+import {randomUUID} from 'node:crypto'
 
 interface ButtonProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ export const Button = ({ children, className, appName }: ButtonProps) => {
       className={className}
       onClick={() => alert(`Hello from your ${appName} app!`)}
     >
+      {randomUUID()}
       {children}
     </button>
   );
