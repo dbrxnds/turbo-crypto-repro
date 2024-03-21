@@ -1,7 +1,7 @@
-import { mysql } from "../src/mysql"
+// import { mysql } from "../src/mysql"
 
 export const getServerSideProps = () => {
-const t = mysql.user.findMany()
+// const t = mysql.user.findMany()
 
     return {
         props: {},
@@ -10,5 +10,13 @@ const t = mysql.user.findMany()
 }
 
 export default function Page() {
-    return <div>Hi</div>
+    return <div>Hi <LogInstanceInApiButton /></div>
+}
+
+function LogInstanceInApiButton() {
+    const handleClick =  async () => {
+await fetch('/api/test')
+    }
+
+    return <button onClick={handleClick}>Click me to log instance server-side</button>
 }
